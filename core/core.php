@@ -2,9 +2,9 @@
 
 function autoload($classname) {
     $filename = strtolower($classname) . '.php';
-    $expArr = explode('_', $className);
+    $expArr = explode('_', $classname);
 
-    if(empty($expArr[1]) OR $expArr[1] == 'Base') {
+    if(empty($expArr[0]) OR $expArr[1] == 'Base') {
         $folder = 'classes';
     } else {
         switch(strtolower($expArr[0])) {
@@ -22,9 +22,9 @@ function autoload($classname) {
         }
     }
 
-    $file = SITE_PATH . $folder . DS . $filename;
+    $file = SITE_PATH . DS . 'src' . DS . $folder . DS . $filename;
 
-    if(file_exists($file) == false) {
+    if(!file_exists($file)) {
         return false;
     }
     

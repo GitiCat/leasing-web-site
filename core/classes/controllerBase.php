@@ -7,7 +7,7 @@ abstract class ControllerBase {
 
     public $vars = array();
 
-    function __contruct($registry) {
+    function __construct($registry) {
         $this->registry = $registry;
         $this->template = new Template($this->layouts, get_class($this));
     }

@@ -10,7 +10,6 @@ class Router {
     }
 
     function setPath($path) {
-        $path = trim($path, '/\\');
         $path .= DS;
 
         if(!is_dir($path)) {
@@ -58,6 +57,7 @@ class Router {
         }
 
         $file = $cmd_path . $controller . '.php';
+
         $args = $parts;
     }
 

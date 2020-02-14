@@ -23,15 +23,15 @@ class Template {
     }
 
     function view($name) {
-        $pathLayout = SITE_PATH . 'src' . DS . 'views' . DS . $this->layouts . '.php';
-        $contentPage = SITE_PATH . 'src' . DS . 'views' . DS . $this->controller . DS . $name . '.php';
+        $pathLayout = SITE_PATH . DS . 'src' . DS . 'views' . DS . 'layouts' . DS . $this->layouts . '.php';
+        $contentPage = SITE_PATH . DS . 'src' . DS . 'views' . DS . $this->controller . DS . $name . '.php';
 
-        if(file_exists($pathLayout) == false) {
+        if(!file_exists($pathLayout)) {
             trigger_error('Layout ' . $this->layouts . ' does not exist', E_USER_NOTICE);
             return false;
         }
 
-        if(file_exists($contentPage) == false) {
+        if(!file_exists($contentPage)) {
             trigger_error('Template' . $name . ' does not exist', E_USE_NOTICE);
             return false;
         }
