@@ -292,3 +292,135 @@ p, span {
     width: 79%;
     padding-right: 12%;
 }
+
+/* content conditions specific styles */
+.container.conditions .block:first-child {
+    background-color: #FFB74D;
+}
+
+.container.conditions .block:first-child .title h1,
+.container.conditions .block:first-child .descriptor {
+    text-align: right;
+}
+
+.container.conditions ol {
+	list-style-type: none; 
+	counter-reset: num;
+	position: relative;	    
+	margin: 0 0 0 72px;
+	padding: 0;
+}
+
+.container.conditions ol li {
+	position: relative;	
+	margin: 0;
+	padding: 0 0 35px 0;
+    line-height: 35px;
+    
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.container.conditions ol li:after {
+	content: counter(num); 
+	counter-increment: num;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: -72px;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	background: transparent;
+    color: rgba(0,0,0,.87);
+    font-weight: 700;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 50%;
+	border: 3px solid #F57C00;
+}
+
+.container.conditions ol li:before {
+	content: ''; 
+	position: absolute;
+	top: 45px;
+	bottom: 4px;
+	left: -53px;    
+	width: 1px;
+	border-left: 3px dotted #F57C00;
+}
+
+.container.conditions ol li:last-child:before {
+	display: none;
+}
+
+.copy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 25px 0px;
+
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, .5);
+}
+
+.copy,
+.copy #copy-date {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: none;
+}
+
+/* content contacts specific styles */
+.container.contacts .title {
+    text-align: left;
+}
+
+.container.contacts .block:first-child {
+    text-align: right;
+}
+
+.container.contacts form {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.container.contacts form .data {
+    display: block;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.container.contacts form .data label {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.container.contacts form .data .input-block {
+    position: relative;
+    display: table;
+    vertical-align: middle;
+}
+
+.container.contacts form .data .input-block i {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    color: rgba(255, 255, 255, .9);
+    background-color: rgba(0,0,0,.87);
+}
+
+.container.contacts form .data .input-block input {
+    display: table-cell;
+    width: 225px;
+    height: 35px;
+
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0 5px; 
+}

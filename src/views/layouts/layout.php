@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $content["document_name"];?></title>
-	<link href="/public/styles/styles.css" rel="stylesheet" type="text/css"/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/public/styles/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	<!-- Global navigation bar -->
@@ -38,11 +38,11 @@
 
 		<!-- Footer block -->
 		<footer class="footer" id="footer">
-			
+			<div class="copy">Copyright &copy; <span id="copy-date"></span> Все права защищены.</div>
 		</footer>
 	</div>
 
 	<!-- Connect main script file -->
-	<script src="/public/scripts/scripts.js"></script>
+	<script src="../../../public/scripts/scripts.js"></script>
 </body>
 </html>
