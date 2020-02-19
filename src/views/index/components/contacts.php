@@ -1,10 +1,10 @@
-<?php
-    
+<?php if ($_SERVER["REQUEST_METHOD"] == "post")
+    var_dump($_POST);
 ?>
 
 <div class="container contacts">
     <div class="block b-line-2">
-        <form action="contacts.php" method="POST">
+        <form action="" method="POST">
             <div class="data">
                 <label for="name">Имя</label>
                 <div class="input-block">
