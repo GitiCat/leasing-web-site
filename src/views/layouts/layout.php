@@ -44,5 +44,6 @@
 
 	<!-- Connect main script file -->
 	<script src="../../../public/scripts/scripts.js"></script>
+	<script src="../../../public/scripts/form.js"></script>
 </body>
 </html>

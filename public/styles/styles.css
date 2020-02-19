@@ -415,12 +415,93 @@ p, span {
     background-color: rgba(0,0,0,.87);
 }
 
+
 .container.contacts form .data .input-block input {
     display: table-cell;
-    width: 225px;
+    width: 300px;
     height: 35px;
 
     font-size: 18px;
     font-weight: 300;
     padding: 0 5px; 
+}
+
+.container.contacts form .data .error {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: red;
+}
+
+.container.contacts form input:focus,
+.container.contacts form input:hover,
+.container.contacts form input::selection,
+.container.contacts form textarea:focus,
+.container.contacts form textarea:hover,
+.container.contacts form textarea::selection {
+    outline: none;
+}
+
+
+.container.contacts form textarea,
+.container.contacts form input[type="submit"] {
+    display: block;
+}
+
+.container.contacts form textarea {
+    width: 335px;
+    height: 150px;
+}
+
+.container.contacts form input[type="submit"] {
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 183, 77, .7);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+
+    transition: all .3s ease;
+    transform: perspective(100px) translateZ(2px);
+}
+
+.container.contacts form input[type="submit"]:hover {
+    transform: perspective(100px) translateZ(0px);
+    background-color: rgba(255, 183, 77, 1);
+    box-shadow: none;;
+}
+
+.contact {
+    margin-bottom: 42px;
+    padding: 10px 15px;
+    transition: all .3s ease;
+}
+
+.contact:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: perspective(500px) translateZ(4px);
+}
+
+.contact a {
+    display: block;
+    margin: 0 0 12px;
+    color: rgba(0,0,0,.6);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 300;
+
+    transition: all .3s ease;
+}
+
+.contact a:hover {
+    color: #F57C00;
+}
+
+.contact p {
+    color: rgba(0,0,0,.87) !important;
 }
