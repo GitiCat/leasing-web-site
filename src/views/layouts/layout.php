@@ -1,3 +1,9 @@
+<?php
+	header("Content-Type: text/html; charset=UTF-8");
+	header("Cache-Control: no-store, no-cache, must-revalidate");
+	header("Cache-Control: post-chech=0, pre-check=0", false);
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

@@ -1,29 +1,34 @@
-<?php if ($_SERVER["REQUEST_METHOD"] == "post")
-    var_dump($_POST);
-?>
-
 <div class="container contacts">
     <div class="block b-line-2">
-        <form action="" method="POST">
+        <form action="form.php" method="POST" novalidate id="feedback">
             <div class="data">
                 <label for="name">Имя</label>
                 <div class="input-block">
                     <i class="material-icons">person</i>
-                    <input type="text" id="name" value="">
+                    <input type="text" name="uname" id="name" value="" required>
                 </div>
-                <div class="error">* обязательное поле</div>
+                <div class="error-message">
+                    <div class="error">* обязательное поле</div>
+                </div>
             </div>
             <div class="data">
                 <label for="email">Электронная почта</label>
                 <div class="input-block">
                     <i class="material-icons">alternate_email</i>
-                    <input type="text" id="email" value="">
+                    <input type="text" name="email" id="email" value="" required>
                 </div>
-                <div class="error">* обязательное поле</div>
+                <div class="error-message">
+                    <div class="error">* обязательное поле</div>
+                    <div class="valid">* введен не валидный адрес</div>
+                </div>
             </div>
             <div class="data">
-                <textarea name="message" id="message" value=""></textarea>
-                <div class="error">* обязательное поле</div>
+                <div class="input-block">
+                    <textarea name="message" id="message" value="" required></textarea>
+                </div>
+                <div class="error-message">
+                    <div class="error">* обязательное поле</div>
+                </div>
             </div>
             <input type="submit" value="Отправить">
         </form>

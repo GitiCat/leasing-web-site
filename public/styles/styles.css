@@ -390,7 +390,7 @@ p, span {
 .container.contacts form .data {
     display: block;
     position: relative;
-    margin-bottom: 32px;
+    margin-bottom: 0px;
 }
 
 .container.contacts form .data label {
@@ -426,15 +426,33 @@ p, span {
     padding: 0 5px; 
 }
 
-.container.contacts form .data .error {
+.container.contacts form .data .error,
+.container.contacts form .data .valid {
     display: block;
     position: relative;
+    height: 0px;
     margin-top: 5px;
 
     font-size: 14px;
     font-weight: 500;
 
     color: red;
+
+    visibility: collapse;
+    opacity: 0;
+    transition: visibility .3s ease, opacity .3s ease;
+}
+
+.container.contacts form .data .error-message {
+    height: 45px;
+    max-height: 45px;
+}
+
+.container.contacts form .data .error.show,
+.container.contacts form .data .valid.show {
+    height: 16px;
+    visibility: visible;
+    opacity: 1;
 }
 
 .container.contacts form input:focus,
@@ -455,6 +473,7 @@ p, span {
 .container.contacts form textarea {
     width: 335px;
     height: 150px;
+    resize: none;
 }
 
 .container.contacts form input[type="submit"] {
