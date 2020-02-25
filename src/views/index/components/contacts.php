@@ -1,4 +1,4 @@
-<div class="container contacts">
+<div class="container contacts" id="contacts">
     <div class="block b-line-2">
         <form action="form.php" method="POST" novalidate id="feedback">
             <div class="data">

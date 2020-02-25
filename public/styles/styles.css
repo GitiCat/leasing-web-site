@@ -14,6 +14,10 @@ ul li {
     list-style-type: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6, span, p {
     letter-spacing: -.03em;
     line-height: 1.5;
@@ -47,6 +51,65 @@ p, span {
 
 .root .footer {
     flex: 0 0 auto;
+}
+
+/* navigation */
+.nav-panel {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 9999;
+    margin-top: 42px;
+    padding-right: 42px;
+}
+
+.nav-panel .nav-list {
+    position: relative;
+    align-self: flex-end;
+    height: auto;
+}
+
+.nav-panel .nav-list .nav-item {
+    display: inline-block;
+    transition: all .3 ease;
+}
+
+.nav-panel .nav-list .nav-item a {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    
+    color: rgba(255, 255 ,255, 0.9);
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+
+    transition: all .3s ease;
+}
+
+.nav-panel .nav-list .nav-item a:hover {
+    color: #FFB74D;
+}
+
+.nav-panel.scroll-nav {
+    margin-top: 0;
+    background-color: white;
+    transition: all .3s ease;
+}
+
+.nav-panel.scroll-nav .nav-list .nav-item a {
+    color: rgba(0,0,0,.87);
+}
+
+.nav-panel.scroll-nav .nav-list .nav-item:hover {
+    transition: all .3s ease;
+    background-color: #FB8C00;
+}
+
+.nav-panel.scroll-nav .nav-list .nav-item a:hover {
+    color: rgba(255, 255, 255, .9);
 }
 
 /* header */

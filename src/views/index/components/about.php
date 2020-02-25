@@ -1,4 +1,4 @@
-<div class="container about">
+<div class="container about" id="company">
     <div class="block b-line-2">
         <ul>
             <li>

@@ -16,10 +16,8 @@
 </head>
 <body>
 	<!-- Global navigation bar -->
-	<div class="nav-bar">
-
-	</div>
-
+	<?php include(SITE_PATH . DS . "src" . DS . "views" . DS . "index" . DS . "components" . DS . "navigation.php"); ?>
+	
 	<div class="root">
 		<!-- Header block -->
 		<header class="header" id="header">

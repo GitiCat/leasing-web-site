@@ -1,4 +1,4 @@
-<div class="container conditions">
+<div class="container conditions" id="conditions">
     <div class="block b-line-2">
         <div class="title">
             <h1>Условия совместного сотрудничества</h1>
