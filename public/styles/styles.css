@@ -53,63 +53,47 @@ p, span {
     flex: 0 0 auto;
 }
 
-/* navigation */
+/* navigation panel */
 .nav-panel {
-    position: fixed;
     display: flex;
     flex-direction: column;
+    position: fixed;
     width: 100%;
     z-index: 9999;
-    margin-top: 42px;
-    padding-right: 42px;
+
+    transition: all .3s ease;
 }
 
 .nav-panel .nav-list {
-    position: relative;
+    display: block;
     align-self: flex-end;
-    height: auto;
+    width: auto;
+    padding-right: 112px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.nav-panel:hover > .nav-list .nav-item a {
+    color: rgba(255, 255, 255, .5)
 }
 
 .nav-panel .nav-list .nav-item {
     display: inline-block;
-    transition: all .3 ease;
 }
 
 .nav-panel .nav-list .nav-item a {
-    display: block;
-    position: relative;
     cursor: pointer;
-    
-    color: rgba(255, 255 ,255, 0.9);
+    margin: 0 12px;
+    color: rgba(255, 255, 255, .9);
+
+    font-size: 16px;
     font-weight: 400;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 10px 15px;
 
     transition: all .3s ease;
 }
 
 .nav-panel .nav-list .nav-item a:hover {
-    color: #FFB74D;
-}
-
-.nav-panel.scroll-nav {
-    margin-top: 0;
-    background-color: white;
-    transition: all .3s ease;
-}
-
-.nav-panel.scroll-nav .nav-list .nav-item a {
-    color: rgba(0,0,0,.87);
-}
-
-.nav-panel.scroll-nav .nav-list .nav-item:hover {
-    transition: all .3s ease;
-    background-color: #FB8C00;
-}
-
-.nav-panel.scroll-nav .nav-list .nav-item a:hover {
-    color: rgba(255, 255, 255, .9);
+    color: rgba(255, 255, 255, .9) !important;
 }
 
 /* header */
@@ -586,4 +570,165 @@ p, span {
 
 .contact p {
     color: rgba(0,0,0,.87) !important;
+}
+
+.l-objects {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 42px 0;
+}
+
+.l-objects .l-o-section {
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    height: 512px;
+    margin: 2.5px;
+
+    transition: all .3s ease;
+}
+
+.l-objects .l-o-section:hover {
+    transform: perspective(10px) translateZ(.2px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.l-objects .l-o-section .l-o-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f57c00c3;
+
+    transition: width .5s ease;
+}
+
+.l-objects .l-o-section .content {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.l-objects .l-o-section .content .text {
+    display: block;
+}
+
+.l-objects .l-o-section .content .text h2 {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.l-objects .l-o-section .content .text span {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.l-objects .l-o-section .back {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #212121;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: 2px solid #212121;
+    border-radius: 50%;
+
+    transition: all .3s ease;
+}
+
+.l-objects .l-o-section .back:hover {
+    background-color: #212121;
+    color: rgba(255, 255, 255, .9);
+}
+
+.l-objects .l-o-section .back i{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 28px;
+    padding-top: 2px;
+}
+
+#gruz {
+    background-image: url("../images/objects/gruz.png");
+}
+
+#esk {
+    background-image: url("../images/objects/esk.png");
+}
+
+#stroy {
+    background-image: url("../images/objects/stroy.png");
+}
+
+#prom {
+    background-image: url("../images/objects/prom.png");
+}
+
+.l-objects .l-o-section.opening {
+    cursor: default;
+    flex: 7;
+    transform: perspective(10px) translateZ(0px);
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2%;
+}
+
+.l-objects .l-o-section.opening .l-o-image {
+    background-position: 85% 1%;
+}
+
+.l-objects .l-o-section:last-child.opening .l-o-image {
+    background-position: 85% center;
+}
+
+.l-objects .l-o-section.opening .l-o-image:before {
+    width: 0;
+}
+
+.l-objects .l-o-section.opening .l-o-image .text h2 {
+    animation-name: textAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: .4s;
+}
+
+.l-objects .l-o-section.opening .l-o-image .text span {
+    animation-name: textAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-delay: .45s;
+}
+
+@keyframes textAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.l-objects .l-o-section.opening .l-o-image .back {
+    display: table;
+}
+
+.l-objects .l-o-section .l-o-image {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: -75px center;
+
+    transition: background-position .3s ease;
 }
