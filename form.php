@@ -1,22 +1,34 @@
-<?php if(isset($_POST['submit'])) {
+<?php
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    require 'vendor/autoload.php';
 
     if(!empty($_POST['uname']) && !empty($_POST['email']) && !empty($_POST['message'])) {
 
+        //  name sender [from POST]
         $uname = $_POST['uname'];
+        //  email sender [from POST]
         $email = $_POST['email'];
+        //  message sender [from POST]
         $message = $_POST['message'];
 
         $subject = 'Сообщение обратной связи';
-        $toName = '';   //  need adding
-        $toEmail = '';  //  need adding
 
-        require PHPMailer\PHPMailer\PHPMailer;
-        require PHPMailer\PHPMailer\SMTP;
-        require PHPMailer\PHPMailer\Exception;
+        $fromEmail = 'site@mvs-finance.ru';  
+        $fromName = $uname;
+        
+        $toName = 'MVC Finance info';
+        $toEmail = 'info@mvs-finance.ru';
 
-        require 'vendor/autoload.php';
+        // to: info@mvs-finance.ru
+        // login: site@mvs-finance.ru
+        // narod1012
 
-        $mail = new PHPMailer;
+        //  create new PhpMailer example
+        $mail = new PHPMailer();
 
         try {
             //  Server settings
@@ -28,17 +40,26 @@
             //  SMTP server settings
             $mail->Host = "ssl://smtp.yandex.ru";
             $mail->Port = 465;
-            $mail->Username = '';   //  need adding
-            $mail->Password = '';   //  need adding
+            $mail->Username = 'site@mvs-finance.ru';
+            $mail->Password = 'narod1012';
 
             //  Recipients
-            $mail->setFrom($email, $uname);
-            $mail->setAddress($toEmail, $toName);
+            $mail->setFrom($fromEmail, $fromName);
+            $mail->addAddress($toEmail, $toName);
             
             //  Content
             $mail->isHTML(true);
             $mail->Subject  = $subject;
-            $mail->Body     = $message;
+            $mail->Body     = "
+                <html>
+                    <head></head>
+                    <body>
+                        <p>Сообщение от: ". $uname ."</p>
+                        <p>Электронная почта: ". $email ."</p>
+                        <p>Сообщение: ". $message ."</p>
+                    </body>
+                </html>
+            ";
 
             $mail->send();
 
@@ -46,5 +67,4 @@
             echo "Message could not be send. Mailer error: {$$mail->ErrorInfo}";
         }
     }
-}
 ?>

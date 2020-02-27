@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navScrollingToElement("link-conditions", "conditions");
     navScrollingToElement("link-contacts", "contacts");
 
-    objectsOpen();
-
     var nav = document.getElementById("nav");
     nav.style.cssText = "margin-top: 92px";
 
@@ -84,37 +82,4 @@ function navScrollingToElement(link, to) {
 
         event.preventDefault();
     });
-}
-
-function objectsOpen() {
-    var objectsList = document.querySelectorAll(".l-o-section");
-    var openingClass = "opening";
-
-    objectsList.__proto__.opening = undefined;
-
-    objectsList.__proto__.closeOpening = function() {
-
-        if(objectsList.opening !== undefined)
-            objectsList.opening.classList.remove(openingClass)
-    }
-
-    objectsList.__proto__.open = function(obj) {
-        var current = objectsList.opening,
-            open = obj;
-
-        if (current !== undefined)
-            current.classList.remove(openingClass);
-
-        if (open === undefined)
-            throw new Error('ObjectList: Objects to open is not defined!');
-
-        open.classList.add(openingClass);
-        objectsList.opening = open;
-    }
-
-    objectsList.forEach(obj => {
-        obj.addEventListener("click", (e) => {
-            objectsList.open((e.target.offsetParent).offsetParent);
-        });
-    })
 }

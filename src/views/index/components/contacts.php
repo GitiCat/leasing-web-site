@@ -5,7 +5,12 @@
                 <label for="name">Имя</label>
                 <div class="input-block">
                     <i class="material-icons">person</i>
-                    <input type="text" name="uname" id="name" value="" required>
+                    <input type="text" 
+                        name="uname" 
+                        id="name" 
+                        value=""
+                        autocomplete="off"
+                        required>
                 </div>
                 <div class="error-message">
                     <div class="error">* обязательное поле</div>
@@ -15,7 +20,12 @@
                 <label for="email">Электронная почта</label>
                 <div class="input-block">
                     <i class="material-icons">alternate_email</i>
-                    <input type="text" name="email" id="email" value="" required>
+                    <input type="text" 
+                        name="email" 
+                        id="email" 
+                        value="" 
+                        autocomplete="off"
+                        required>
                 </div>
                 <div class="error-message">
                     <div class="error">* обязательное поле</div>

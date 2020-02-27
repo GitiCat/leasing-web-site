@@ -300,12 +300,12 @@ p, span {
 }
 
 .content .container .descriptor p {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 20px;
     letter-spacing: -.03em;
     line-height: 1.5;
     text-transform: none;
-    color: rgba(0,0,0,.6);
+    color: rgba(0,0,0,.75);
 }
 
 /* content about specific styles */
@@ -549,8 +549,8 @@ p, span {
 }
 
 .contact:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    transform: perspective(500px) translateZ(4px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transform: perspective(10px) translateZ(.15px);
 }
 
 .contact a {
@@ -572,163 +572,87 @@ p, span {
     color: rgba(0,0,0,.87) !important;
 }
 
-.l-objects {
+.leasing-object-list {
     display: flex;
     flex-flow: row nowrap;
     margin: 42px 0;
 }
 
-.l-objects .l-o-section {
-    cursor: pointer;
-    position: relative;
+.leasing-object-list .item {
     flex: 1;
-    height: 512px;
-    margin: 2.5px;
+    position: relative;
+    display: table;
+    margin: 5px;
+    width: 100%;
+    height: 416px;
+
+    border-radius: 5px;
+    overflow: hidden;
 
     transition: all .3s ease;
 }
 
-.l-objects .l-o-section:hover {
-    transform: perspective(10px) translateZ(.2px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.leasing-object-list .item:hover {
+    flex: 2;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transform: perspective(10px) translateZ(.15px);
 }
 
-.l-objects .l-o-section .l-o-image:before {
+.leasing-object-list .item .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 20% center;
+
+    transition: all .3s ease;
+}
+
+.leasing-object-list .item .image:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f57c00c3;
-
-    transition: width .5s ease;
+    background-color: #ffae36ad;
 }
 
-.l-objects .l-o-section .content {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.l-objects .l-o-section .content .text {
-    display: block;
-}
-
-.l-objects .l-o-section .content .text h2 {
-    opacity: 0;
-    transform: translateY(-100%);
-}
-
-.l-objects .l-o-section .content .text span {
-    opacity: 0;
-    transform: translateY(-100%);
-}
-
-.l-objects .l-o-section .back {
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: #212121;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    border: 2px solid #212121;
-    border-radius: 50%;
-
-    transition: all .3s ease;
-}
-
-.l-objects .l-o-section .back:hover {
-    background-color: #212121;
-    color: rgba(255, 255, 255, .9);
-}
-
-.l-objects .l-o-section .back i{
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 28px;
-    padding-top: 2px;
-}
-
-#gruz {
+.leasing-object-list .item#gruz .image {
     background-image: url("../images/objects/gruz.png");
 }
 
-#esk {
-    background-image: url("../images/objects/esk.png");
-}
-
-#stroy {
+.leasing-object-list .item#stroy .image {
     background-image: url("../images/objects/stroy.png");
 }
 
-#prom {
+.leasing-object-list .item#esk .image {
+    background-image: url("../images/objects/esk.png");
+}
+
+.leasing-object-list .item#prom .image {
     background-image: url("../images/objects/prom.png");
 }
 
-.l-objects .l-o-section.opening {
-    cursor: default;
-    flex: 7;
-    transform: perspective(10px) translateZ(0px);
-    box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 2%;
-}
-
-.l-objects .l-o-section.opening .l-o-image {
-    background-position: 85% 1%;
-}
-
-.l-objects .l-o-section:last-child.opening .l-o-image {
-    background-position: 85% center;
-}
-
-.l-objects .l-o-section.opening .l-o-image:before {
-    width: 0;
-}
-
-.l-objects .l-o-section.opening .l-o-image .text h2 {
-    animation-name: textAnim;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-delay: .4s;
-}
-
-.l-objects .l-o-section.opening .l-o-image .text span {
-    animation-name: textAnim;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-    animation-delay: .45s;
-}
-
-@keyframes textAnim {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.l-objects .l-o-section.opening .l-o-image .back {
-    display: table;
-}
-
-.l-objects .l-o-section .l-o-image {
+.leasing-object-list .item .content {
     position: relative;
-    width: inherit;
-    height: inherit;
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: -75px center;
+    display: table-cell;
+    width: 100%;
+    padding: 0 25px;
 
-    transition: background-position .3s ease;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.leasing-object-list .item .content h2 {
+    color: #212121;
+    font-size: 22px;
+}
+
+.leasing-object-list .item .content span {
+    color: rgba(0, 0, 0, .7);
 }
